@@ -3,7 +3,6 @@ package baguchan.maturidelight.register;
 import baguchan.maturidelight.MaturiDelight;
 import baguchan.maturidelight.block.PlateBlock;
 import baguchan.maturidelight.block.TakoyakiMakerBlock;
-import baguchan.tofucraft.registry.TofuCreativeModeTab;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;

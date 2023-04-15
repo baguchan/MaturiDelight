@@ -1,6 +1,5 @@
 package baguchan.maturidelight.client;
 
-import baguchan.maturidelight.blockentity.PlateBlockEntity;
 import baguchan.maturidelight.register.ModBlockEntitys;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;

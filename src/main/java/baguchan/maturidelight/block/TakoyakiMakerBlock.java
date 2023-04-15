@@ -3,7 +3,6 @@ package baguchan.maturidelight.block;
 import baguchan.maturidelight.blockentity.TakoyakiMakerBlockEntity;
 import baguchan.maturidelight.register.ModBlockEntitys;
 import baguchan.maturidelight.register.ModItems;
-import baguchan.tofucraft.registry.TofuItems;
 import baguchan.tofucraft.registry.TofuTags;
 import net.minecraft.core.BlockPos;
 import net.minecraft.sounds.SoundEvents;
@@ -27,7 +26,6 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
-import vectorwing.farmersdelight.common.tag.ModTags;
 
 import javax.annotation.Nullable;
 

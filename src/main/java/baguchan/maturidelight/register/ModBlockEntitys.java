@@ -3,7 +3,6 @@ package baguchan.maturidelight.register;
 import baguchan.maturidelight.MaturiDelight;
 import baguchan.maturidelight.blockentity.PlateBlockEntity;
 import baguchan.maturidelight.blockentity.TakoyakiMakerBlockEntity;
-import baguchan.tofucraft.blockentity.FoodPlateBlockEntity;
 import com.mojang.datafixers.types.Type;
 import net.minecraft.Util;
 import net.minecraft.util.datafix.fixes.References;

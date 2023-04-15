@@ -18,7 +18,6 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.gameevent.GameEvent;
-import net.minecraft.world.phys.Vec2;
 import net.minecraftforge.registries.ForgeRegistries;
 import vectorwing.farmersdelight.common.block.entity.HeatableBlockEntity;
 

@@ -11,7 +11,6 @@ import net.minecraft.client.renderer.blockentity.BlockEntityRenderer;
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
 import net.minecraft.core.NonNullList;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.phys.Vec2;
 
 public class PlateRender implements BlockEntityRenderer<PlateBlockEntity>
 {

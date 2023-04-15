@@ -3,9 +3,7 @@ package baguchan.maturidelight.blockentity;
 import baguchan.maturidelight.register.ModBlockEntitys;
 import baguchan.maturidelight.register.ModItems;
 import baguchan.maturidelight.util.SuspiciousUtil;
-import baguchan.tofucraft.blockentity.SyncedBlockEntity;
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.Direction;
 import net.minecraft.core.NonNullList;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.nbt.CompoundTag;
@@ -13,26 +11,16 @@ import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.Mth;
-import net.minecraft.world.*;
-import net.minecraft.world.item.Item;
+import net.minecraft.world.Clearable;
+import net.minecraft.world.ContainerHelper;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
-import net.minecraft.world.level.block.entity.BlockEntityType;
-import net.minecraft.world.level.block.entity.CampfireBlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.phys.Vec2;
-import net.minecraftforge.common.capabilities.Capability;
-import net.minecraftforge.common.capabilities.ForgeCapabilities;
-import net.minecraftforge.common.util.LazyOptional;
-import net.minecraftforge.items.IItemHandler;
-import net.minecraftforge.items.ItemStackHandler;
 import net.minecraftforge.registries.ForgeRegistries;
 import vectorwing.farmersdelight.common.block.entity.HeatableBlockEntity;
-
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
 
 public class TakoyakiMakerBlockEntity extends BlockEntity implements HeatableBlockEntity, Clearable {
     private final NonNullList<ItemStack> items = NonNullList.withSize(9, ItemStack.EMPTY);
