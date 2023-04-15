@@ -1,0 +1,23 @@
+{
+	"parent": "block/block",
+	"textures": {
+		"0": "maturidelight:block/takoyaki_maker_top",
+		"1": "maturidelight:block/takoyaki_maker_side",
+		"2": "maturidelight:block/takoyaki_maker_bottom",
+		"particle": "maturidelight:block/takoyaki_maker_top"
+	},
+	"elements": [
+		{
+			"from": [0, 0, 0],
+			"to": [16, 5, 16],
+			"faces": {
+				"north": {"uv": [0, 11, 16, 16], "texture": "#1"},
+				"east": {"uv": [0, 11, 16, 16], "texture": "#1"},
+				"south": {"uv": [0, 11, 16, 16], "texture": "#1"},
+				"west": {"uv": [0, 11, 16, 16], "texture": "#1"},
+				"up": {"uv": [0, 0, 16, 16], "texture": "#0"},
+				"down": {"uv": [0, 0, 16, 16], "texture": "#2"}
+			}
+		}
+	]
+}

@@ -1,0 +1,7 @@
+{
+	"credit": "Made with Blockbench",
+	"parent": "maturidelight:block/takoyaki_raw",
+	"textures": {
+		"base": "maturidelight:item/takoyaki_soysauce"
+	}
+}
