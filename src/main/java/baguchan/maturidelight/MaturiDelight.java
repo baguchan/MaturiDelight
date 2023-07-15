@@ -3,6 +3,7 @@ package baguchan.maturidelight;
 import baguchan.maturidelight.client.ClientRegistrar;
 import baguchan.maturidelight.register.ModBlockEntitys;
 import baguchan.maturidelight.register.ModBlocks;
+import baguchan.maturidelight.register.ModCreativeTabs;
 import baguchan.maturidelight.register.ModItems;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
@@ -26,6 +27,7 @@ public class MaturiDelight
         ModBlocks.BLOCKS.register(modBus);
         ModItems.ITEMS.register(modBus);
         ModBlockEntitys.BLOCK_ENTITIES.register(modBus);
+        ModCreativeTabs.CREATIVE_MODE_TABS.register(modBus);
         // Register the commonSetup method for modloading
         modBus.addListener(this::commonSetup);
         // Register ourselves for server and other game events we are interested in

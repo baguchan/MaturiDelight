@@ -1,17 +1,23 @@
 package baguchan.maturidelight.data;
 
 import baguchan.maturidelight.register.ModBlocks;
+import net.minecraft.data.loot.BlockLootSubProvider;
+import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.storage.loot.LootTable;
 
 import java.util.HashSet;
 import java.util.Set;
 
-public class BlockLootTables extends net.minecraft.data.loot.BlockLoot {
+public class BlockLootTables extends BlockLootSubProvider {
     private final Set<Block> knownBlocks = new HashSet<>();
     // [VanillaCopy] super
     private static final float[] DEFAULT_SAPLING_DROP_RATES = new float[]{0.05F, 0.0625F, 0.083333336F, 0.1F};
     private static final float[] RARE_SAPLING_DROP_RATES = new float[]{0.025F, 0.027777778F, 0.03125F, 0.041666668F, 0.1F};
+
+    protected BlockLootTables() {
+        super(Set.of(), FeatureFlags.REGISTRY.allFlags());
+    }
 
     @Override
     protected void add(Block block, LootTable.Builder builder) {
@@ -20,7 +26,7 @@ public class BlockLootTables extends net.minecraft.data.loot.BlockLoot {
     }
 
     @Override
-    protected void addTables() {
+    protected void generate() {
         this.dropSelf(ModBlocks.TAKOYAKI_MAKER.get());
         this.dropSelf(ModBlocks.PLATE.get());
     }

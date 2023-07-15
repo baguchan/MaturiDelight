@@ -4,7 +4,6 @@ import baguchan.maturidelight.util.SuspiciousUtil;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
@@ -33,9 +32,9 @@ public class SuspiciousItem extends Item {
                     p_41411_.eat(p_41410_, p_41409_);
                 }else if(item instanceof BlockItem blockItem){
                     if(blockItem.getBlock() instanceof FlowerBlock flowerBlock){
-                        p_41411_.addEffect(new MobEffectInstance(flowerBlock.getSuspiciousStewEffect(), flowerBlock.getEffectDuration()));
+                        p_41411_.addEffect(new MobEffectInstance(flowerBlock.getSuspiciousEffect(), flowerBlock.getEffectDuration()));
                     }else {
-                        p_41411_.hurt(DamageSource.STARVE, 5);
+                        p_41411_.hurt(p_41411_.damageSources().starve(), 5);
                         p_41411_.addEffect(new MobEffectInstance(MobEffects.POISON, 600));
                         p_41411_.addEffect(new MobEffectInstance(MobEffects.HUNGER, 600));
                         p_41411_.addEffect(new MobEffectInstance(MobEffects.CONFUSION, 600));

@@ -1,7 +1,7 @@
-// 1.19.2	2023-04-15T11:07:10.146941	Recipes
-ea9d6043c56b2268f12ff71634453d467da8479b data/maturidelight/advancements/recipes/maturidelight/dough_raw.json
-6437ce9672aab24c42df481186568697abc91330 data/maturidelight/advancements/recipes/maturidelight/plate.json
-9c29bf5cfd303d655e7df47eb6d5c86540991152 data/maturidelight/advancements/recipes/maturidelight/takoyaki_maker.json
-f0e716b8e244c669c26e981c908d35ad4f0f7a38 data/maturidelight/recipes/dough_raw.json
-c8f8e00fa2aeb823b678968c0e26ed1c916729a9 data/maturidelight/recipes/plate.json
-acb244321ae38c7266719b03225d317dddb02f7d data/maturidelight/recipes/takoyaki_maker.json
+// 1.20.1	2023-07-15T16:00:21.7562683	Recipes
+44a3c5069f8538996fc783929b4ff750abf06ed8 data/maturidelight/advancements/recipes/decorations/plate.json
+4a9e693133da7acd465d4bbd6bf2c5d1c83215b1 data/maturidelight/advancements/recipes/decorations/takoyaki_maker.json
+37f5e4fc954ae052e0fa15b05dfddcc472a0fac1 data/maturidelight/advancements/recipes/food/dough_raw.json
+2dc7acde07e33b0e0238ae2e2002a787c71d9692 data/maturidelight/recipes/dough_raw.json
+507e5f173fe79766a414488afc115a11e22a4f7b data/maturidelight/recipes/plate.json
+76a7e4ecc010d8886f9bc2a37779a24c30d4be67 data/maturidelight/recipes/takoyaki_maker.json
