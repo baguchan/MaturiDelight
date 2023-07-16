@@ -1,0 +1,13 @@
+{
+  "item.maturidelight.suspicious_item": "Questo oggetto ha qualcosa dentro...",
+  "item.maturidelight.takoyaki_raw": "Takoyaki crudo",
+  "item.maturidelight.takoyaki": "Takoyaki",
+  "item.maturidelight.takoyaki_soysauce": "Takoyaki alla salsa di soia",
+  "item.maturidelight.okonomiyaki_raw": "Okonomiyaki crudo",
+  "item.maturidelight.okonomiyaki": "Okonomiyaki",
+  "item.maturidelight.okonomiyaki_soysauce": "Okonomiyaki alla salsa di soia",
+  "item.maturidelight.dough_raw": "Impasto da lavorare",
+  "block.maturidelight.takoyaki_maker": "Macchina per Takoyaki",
+  "block.maturidelight.plate": "Piatto",
+  "itemGroup.maturidelight": "MaturiDelight"
+}
