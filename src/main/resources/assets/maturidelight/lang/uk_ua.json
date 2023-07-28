@@ -1,0 +1,21 @@
+{
+  "item.maturidelight.suspicious_item": "У цьому предметі якась річ всередині...",
+  "item.maturidelight.takoyaki_raw": "Сире такоякі",
+  "item.maturidelight.takoyaki": "Такоякі",
+  "item.maturidelight.takoyaki_soysauce": "Такоякі із соєвим соусом",
+  "item.maturidelight.okonomiyaki_raw": "Сире окономіякі",
+  "item.maturidelight.okonomiyaki": "Окономіякі",
+  "item.maturidelight.okonomiyaki_soysauce": "Окономіякі із соєвим соусом",
+  "item.maturidelight.dough_raw": "Сире тісто",
+  "block.maturidelight.takoyaki_maker": "Плита для такоякі",
+  "block.maturidelight.plate": "Плита для окономіякі",
+  "itemGroup.maturidelight": "MaturiDelight",
+  "advancements.maturidelight.root.title": "MaturiDelight",
+  "advancements.maturidelight.root.description": "Ознайомтеся з їжею фестивалю!",
+  "advancements.maturidelight.making_food.title": "Готуючи їжу",
+  "advancements.maturidelight.making_food.description": "Спробуйте змайструвати плиту для такоякі або окономіякі",
+  "advancements.maturidelight.extra_topping.title": "Додатковий топінг",
+  "advancements.maturidelight.extra_topping.description": "Додайте до їжі соєвий соус",
+  "advancements.maturidelight.you_got_poison_me.title": "Ти отруїв мене...",
+  "advancements.maturidelight.you_got_poison_me.description": "їжею з отруйними квітами"
+}
