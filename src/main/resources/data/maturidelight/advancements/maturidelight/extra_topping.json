@@ -1,0 +1,23 @@
+{
+  "parent": "maturidelight:maturidelight/making_food",
+  "display": {
+    "icon": {
+      "item": "maturidelight:takoyaki_soysauce"
+    },
+    "title": {
+      "translate": "advancements.maturidelight.extra_topping.title"
+    },
+    "description": {
+      "translate": "advancements.maturidelight.extra_topping.description"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "food": {
+      "trigger": "maturidelight:extra_topping"
+    }
+  }
+}

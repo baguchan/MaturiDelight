@@ -1,0 +1,23 @@
+{
+  "parent": "maturidelight:maturidelight/extra_topping",
+  "display": {
+    "icon": {
+      "item": "minecraft:spider_eye"
+    },
+    "title": {
+      "translate": "advancements.maturidelight.you_got_poison_me.title"
+    },
+    "description": {
+      "translate": "advancements.maturidelight.you_got_poison_me.description"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "chili": {
+      "trigger": "maturidelight:poison"
+    }
+  }
+}

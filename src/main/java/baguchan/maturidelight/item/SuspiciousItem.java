@@ -1,9 +1,11 @@
 package baguchan.maturidelight.item;
 
+import baguchan.maturidelight.register.ModAdvancements;
 import baguchan.maturidelight.util.SuspiciousUtil;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
@@ -27,13 +29,21 @@ public class SuspiciousItem extends Item {
     public ItemStack finishUsingItem(ItemStack p_41409_, Level p_41410_, LivingEntity p_41411_) {
         if(p_41409_.getTag() != null && p_41409_.getTag().contains(SuspiciousUtil.SUSPICIOUS_TAG)){
             Item item = ForgeRegistries.ITEMS.getValue(ResourceLocation.tryParse(p_41409_.getTag().getString(SuspiciousUtil.SUSPICIOUS_TAG)));
-            if(item != null){
-                if(p_41409_.isEdible()){
-                    p_41411_.eat(p_41410_, p_41409_);
-                }else if(item instanceof BlockItem blockItem){
-                    if(blockItem.getBlock() instanceof FlowerBlock flowerBlock){
+            if(item != null) {
+                if (item.isEdible()) {
+                    p_41411_.eat(p_41410_, item.getDefaultInstance());
+                } else if (item instanceof BlockItem blockItem) {
+                    if (blockItem.getBlock() instanceof FlowerBlock flowerBlock) {
+                        if (flowerBlock.getSuspiciousEffect() == MobEffects.POISON || flowerBlock.getSuspiciousEffect() == MobEffects.WITHER) {
+                            if (p_41411_ instanceof ServerPlayer serverPlayer) {
+                                ModAdvancements.POISON.trigger(serverPlayer);
+                            }
+                        }
                         p_41411_.addEffect(new MobEffectInstance(flowerBlock.getSuspiciousEffect(), flowerBlock.getEffectDuration()));
-                    }else {
+                    } else {
+                        if (p_41411_ instanceof ServerPlayer serverPlayer) {
+                            ModAdvancements.POISON.trigger(serverPlayer);
+                        }
                         p_41411_.hurt(p_41411_.damageSources().starve(), 5);
                         p_41411_.addEffect(new MobEffectInstance(MobEffects.POISON, 600));
                         p_41411_.addEffect(new MobEffectInstance(MobEffects.HUNGER, 600));

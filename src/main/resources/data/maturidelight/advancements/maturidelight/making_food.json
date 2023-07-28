@@ -1,0 +1,23 @@
+{
+  "parent": "maturidelight:maturidelight/roots",
+  "display": {
+    "icon": {
+      "item": "maturidelight:dough_raw"
+    },
+    "title": {
+      "translate": "advancements.maturidelight.making_food.title"
+    },
+    "description": {
+      "translate": "advancements.maturidelight.making_food.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "food": {
+      "trigger": "maturidelight:making_food"
+    }
+  }
+}

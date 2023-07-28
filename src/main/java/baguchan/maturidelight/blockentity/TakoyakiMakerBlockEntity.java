@@ -104,6 +104,7 @@ public class TakoyakiMakerBlockEntity extends BlockEntity implements HeatableBlo
     }
 
     public boolean putSoySauceItem() {
+        boolean flag = false;
         for(int i= 0; i < this.items.size(); i++) {
             if (!isEmpty(i) && this.items.get(i).is(ModItems.TAKOYAKI.get())) {
                 ItemStack original = this.items.get(i);
@@ -114,10 +115,10 @@ public class TakoyakiMakerBlockEntity extends BlockEntity implements HeatableBlo
 
                 this.items.set(i, item);
                 setChanged();
-                return true;
+                flag = true;
             }
         }
-        return false;
+        return flag;
     }
 
     public ClientboundBlockEntityDataPacket getUpdatePacket() {

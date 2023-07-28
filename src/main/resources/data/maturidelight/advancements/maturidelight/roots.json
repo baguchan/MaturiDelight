@@ -1,0 +1,50 @@
+{
+  "display": {
+    "icon": {
+      "item": "maturidelight:plate"
+    },
+    "title": {
+      "translate": "advancements.maturidelight.root.title"
+    },
+    "description": {
+      "translate": "advancements.maturidelight.root.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false,
+    "background": "maturidelight:textures/block/okonomiyaki.png"
+  },
+  "criteria": {
+    "plate": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "maturidelight:plate"
+            ]
+          }
+        ]
+      }
+    },
+    "takoyaki_maker": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "maturidelight:takoyaki_maker"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "plate",
+      "takoyaki_maker"
+    ]
+  ]
+}

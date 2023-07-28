@@ -99,6 +99,7 @@ public class PlateBlockEntity extends BlockEntity implements HeatableBlockEntity
     }
 
     public boolean putSoySauceItem() {
+        boolean flag = false;
         for(int i= 0; i < this.items.size(); i++) {
             if (!isEmpty(i) && this.items.get(i).is(ModItems.OKONOMIYAKI.get())) {
                 ItemStack original = this.items.get(i);
@@ -109,10 +110,11 @@ public class PlateBlockEntity extends BlockEntity implements HeatableBlockEntity
 
                 this.items.set(i, item);
                 setChanged();
-                return true;
+                flag = true;
+
             }
         }
-        return false;
+        return flag;
     }
 
     public ClientboundBlockEntityDataPacket getUpdatePacket() {

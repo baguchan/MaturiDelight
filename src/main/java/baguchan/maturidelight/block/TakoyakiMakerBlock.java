@@ -1,15 +1,18 @@
 package baguchan.maturidelight.block;
 
 import baguchan.maturidelight.blockentity.TakoyakiMakerBlockEntity;
+import baguchan.maturidelight.register.ModAdvancements;
 import baguchan.maturidelight.register.ModBlockEntitys;
 import baguchan.maturidelight.register.ModItems;
 import baguchan.tofucraft.registry.TofuTags;
 import net.minecraft.core.BlockPos;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.Containers;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
@@ -17,6 +20,7 @@ import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.BaseEntityBlock;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.FlowerBlock;
 import net.minecraft.world.level.block.RenderShape;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityTicker;
@@ -46,15 +50,18 @@ public class TakoyakiMakerBlock extends BaseEntityBlock
         if (tileEntity instanceof TakoyakiMakerBlockEntity blockentity) {
             if(heldStack.is(TofuTags.Items.SOYSAUCE)) {
                 if (blockentity.putSoySauceItem()) {
+                    if (player instanceof ServerPlayer serverPlayer) {
+                        ModAdvancements.EXTRA_TOPPING.trigger(serverPlayer);
+                    }
                     player.playSound(SoundEvents.ITEM_PICKUP);
                     ItemStack stack = heldStack.getCraftingRemainingItem();
                     if (!player.addItem(stack)) {
                         player.drop(stack, false);
-                        if(!player.getAbilities().instabuild) {
+                        if (!player.getAbilities().instabuild) {
                             heldStack.shrink(1);
                         }
-                    }else {
-                        if(!player.getAbilities().instabuild) {
+                    } else {
+                        if (!player.getAbilities().instabuild) {
                             heldStack.shrink(1);
                         }
                     }
@@ -65,15 +72,18 @@ public class TakoyakiMakerBlock extends BaseEntityBlock
             }else if(heldStack.is(ModItems.DOUGH_RAW.get())) {
 
                 if (blockentity.addDoughRaw()) {
+                    if (player instanceof ServerPlayer serverPlayer) {
+                        ModAdvancements.MAKING_FOOD.trigger(serverPlayer);
+                    }
                     player.playSound(SoundEvents.ITEM_PICKUP);
                     ItemStack stack = new ItemStack(Items.BOWL);
                     if (!player.addItem(stack)) {
                         player.drop(stack, false);
-                        if(!player.getAbilities().instabuild) {
+                        if (!player.getAbilities().instabuild) {
                             heldStack.shrink(1);
                         }
-                    }else {
-                        if(!player.getAbilities().instabuild) {
+                    } else {
+                        if (!player.getAbilities().instabuild) {
                             heldStack.shrink(1);
                         }
                     }
@@ -82,14 +92,16 @@ public class TakoyakiMakerBlock extends BaseEntityBlock
                 return InteractionResult.CONSUME;
 
             }else {
-                if(heldStack.isEmpty()) {
+                if (heldStack.isEmpty()) {
+                    player.playSound(SoundEvents.ITEM_PICKUP);
                     ItemStack stack = blockentity.removeItem();
                     if (!player.addItem(stack)) {
                         player.drop(stack, false);
                     }
                     return InteractionResult.SUCCESS;
-                }else if(heldStack.isEdible() && blockentity.putSuspiciousItem(heldStack)){
+                } else if ((heldStack.isEdible() || heldStack.getItem() instanceof BlockItem blockItem && blockItem.getBlock() instanceof FlowerBlock) && blockentity.putSuspiciousItem(heldStack)) {
                     player.playSound(SoundEvents.ITEM_PICKUP);
+
                     return InteractionResult.SUCCESS;
                 }
             }
