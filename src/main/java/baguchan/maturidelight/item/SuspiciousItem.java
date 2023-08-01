@@ -31,7 +31,7 @@ public class SuspiciousItem extends Item {
             Item item = ForgeRegistries.ITEMS.getValue(ResourceLocation.tryParse(p_41409_.getTag().getString(SuspiciousUtil.SUSPICIOUS_TAG)));
             if(item != null) {
                 if (item.isEdible()) {
-                    p_41411_.eat(p_41410_, item.getDefaultInstance());
+                    item.finishUsingItem(item.getDefaultInstance(), p_41410_, p_41411_);
                 } else if (item instanceof BlockItem blockItem) {
                     if (blockItem.getBlock() instanceof FlowerBlock flowerBlock) {
                         if (flowerBlock.getSuspiciousEffect() == MobEffects.POISON || flowerBlock.getSuspiciousEffect() == MobEffects.WITHER) {
