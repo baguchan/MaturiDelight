@@ -1,6 +1,7 @@
 package baguchan.maturidelight.register;
 
 import baguchan.maturidelight.MaturiDelight;
+import baguchan.maturidelight.item.SuspiciousBowlItem;
 import baguchan.maturidelight.item.SuspiciousItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
@@ -17,9 +18,9 @@ public class ModItems {
     public static final RegistryObject<Item> OKONOMIYAKI_RAW = ITEMS.register("okonomiyaki_raw", () -> new SuspiciousItem((new Item.Properties()).food(ModFoods.OKONOMIYAKI_RAW)));
     public static final RegistryObject<Item> OKONOMIYAKI = ITEMS.register("okonomiyaki", () -> new SuspiciousItem((new Item.Properties()).food(ModFoods.OKONOMIYAKI)));
     public static final RegistryObject<Item> OKONOMIYAKI_SOYSAUCE = ITEMS.register("okonomiyaki_soysauce", () -> new SuspiciousItem((new Item.Properties()).food(ModFoods.OKONOMIYAKI_SOYSAUCE)));
-    public static final RegistryObject<Item> YAKISOBA = ITEMS.register("yakisoba", () -> new SuspiciousItem((new Item.Properties()).food(ModFoods.YAKISOBA)));
-    public static final RegistryObject<Item> YAKISOBA_SOYSAUCE = ITEMS.register("yakisoba_soysauce", () -> new SuspiciousItem((new Item.Properties()).food(ModFoods.YAKISOBA_SOYSAUCE)));
-    public static final RegistryObject<Item> YAKISOBA_RAW = ITEMS.register("yakisoba_raw", () -> new SuspiciousItem((new Item.Properties()).food(ModFoods.YAKISOBA)));
-    public static final RegistryObject<Item> YAKISOBA_SOYSAUCE_RAW = ITEMS.register("yakisoba_soysauce_raw", () -> new SuspiciousItem((new Item.Properties()).food(ModFoods.YAKISOBA_SOYSAUCE)));
+    public static final RegistryObject<Item> YAKISOBA = ITEMS.register("yakisoba", () -> new SuspiciousBowlItem((new Item.Properties()).stacksTo(16).craftRemainder(Items.BOWL).food(ModFoods.YAKISOBA)));
+    public static final RegistryObject<Item> YAKISOBA_SOYSAUCE = ITEMS.register("yakisoba_soysauce", () -> new SuspiciousBowlItem((new Item.Properties()).stacksTo(16).craftRemainder(Items.BOWL).food(ModFoods.YAKISOBA_SOYSAUCE)));
+    public static final RegistryObject<Item> YAKISOBA_RAW = ITEMS.register("yakisoba_raw", () -> new SuspiciousItem((new Item.Properties()).stacksTo(4).food(ModFoods.YAKISOBA)));
+    public static final RegistryObject<Item> YAKISOBA_SOYSAUCE_RAW = ITEMS.register("yakisoba_soysauce_raw", () -> new SuspiciousItem((new Item.Properties()).stacksTo(4).food(ModFoods.YAKISOBA_SOYSAUCE)));
 
 }
