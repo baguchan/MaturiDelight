@@ -1,3 +1,6 @@
 {
-  "parent": "maturidelight:item/yakisoba"
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "maturidelight:item/yakisoba"
+  }
 }
