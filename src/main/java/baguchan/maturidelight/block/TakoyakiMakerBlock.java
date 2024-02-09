@@ -4,7 +4,7 @@ import baguchan.maturidelight.blockentity.TakoyakiMakerBlockEntity;
 import baguchan.maturidelight.register.ModAdvancements;
 import baguchan.maturidelight.register.ModBlockEntitys;
 import baguchan.maturidelight.register.ModItems;
-import baguchan.tofucraft.registry.TofuTags;
+import baguchan.maturidelight.register.ModTags;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
@@ -48,7 +48,7 @@ public class TakoyakiMakerBlock extends BaseEntityBlock
         Item heldItem = heldStack.getItem();
         BlockEntity tileEntity = level.getBlockEntity(pos);
         if (tileEntity instanceof TakoyakiMakerBlockEntity blockentity) {
-            if(heldStack.is(TofuTags.Items.SOYSAUCE)) {
+            if (heldStack.is(ModTags.Items.SOYSAUCE)) {
                 if (blockentity.putSoySauceItem()) {
                     if (player instanceof ServerPlayer serverPlayer) {
                         ModAdvancements.EXTRA_TOPPING.trigger(serverPlayer);
