@@ -182,7 +182,7 @@ public class PlateBlockEntity extends BlockEntity implements HeatableBlockEntity
 
         if(p_155310_.isHeated(p_155307_, p_155308_)) {
                 ItemStack itemstack = p_155310_.items.get(0);
-                if (!itemstack.isEmpty() && itemstack.is(ModItems.OKONOMIYAKI_RAW.get())) {
+            if (!itemstack.isEmpty() && itemstack.is(ModItems.OKONOMIYAKI_RAW.get()) || itemstack.is(vectorwing.farmersdelight.common.registry.ModItems.RAW_PASTA.get())) {
                     flag = true;
                     p_155310_.cookingProgress++;
                     if (p_155310_.cookingProgress >= 400) {
