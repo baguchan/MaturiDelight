@@ -59,6 +59,16 @@ public class PlateBlockEntity extends BlockEntity implements HeatableBlockEntity
         return flag;
     }
 
+    public boolean addRaw(ItemStack stack) {
+        boolean flag = false;
+        if (isEmpty(0)) {
+            items.set(0, stack.split(1));
+            setChanged();
+            flag = true;
+        }
+        return flag;
+    }
+
     public boolean addItem(ItemStack itemStack) {
         for(int i= 0; i < this.items.size(); i++) {
             if (isEmpty(i) && !itemStack.isEmpty()) {
@@ -101,17 +111,31 @@ public class PlateBlockEntity extends BlockEntity implements HeatableBlockEntity
     public boolean putSoySauceItem() {
         boolean flag = false;
         for(int i= 0; i < this.items.size(); i++) {
-            if (!isEmpty(i) && this.items.get(i).is(ModItems.OKONOMIYAKI.get())) {
-                ItemStack original = this.items.get(i);
-                ItemStack item = new ItemStack(ModItems.OKONOMIYAKI_SOYSAUCE.get());
-                if (original.getTag() != null && original.getTag().contains(SuspiciousUtil.SUSPICIOUS_TAG)) {
-                    item.getOrCreateTag().putString(SuspiciousUtil.SUSPICIOUS_TAG, original.getTag().getString(SuspiciousUtil.SUSPICIOUS_TAG));
+            if (!isEmpty(i)) {
+                if (this.items.get(i).is(ModItems.OKONOMIYAKI.get())) {
+                    ItemStack original = this.items.get(i);
+                    ItemStack item = new ItemStack(ModItems.OKONOMIYAKI_SOYSAUCE.get());
+                    if (original.getTag() != null && original.getTag().contains(SuspiciousUtil.SUSPICIOUS_TAG)) {
+                        item.getOrCreateTag().putString(SuspiciousUtil.SUSPICIOUS_TAG, original.getTag().getString(SuspiciousUtil.SUSPICIOUS_TAG));
+                    }
+
+                    this.items.set(i, item);
+                    setChanged();
+                    flag = true;
+
                 }
+                if (this.items.get(i).is(ModItems.YAKISOBA_RAW.get())) {
+                    ItemStack original = this.items.get(i);
+                    ItemStack item = new ItemStack(ModItems.YAKISOBA_SOYSAUCE_RAW.get());
+                    if (original.getTag() != null && original.getTag().contains(SuspiciousUtil.SUSPICIOUS_TAG)) {
+                        item.getOrCreateTag().putString(SuspiciousUtil.SUSPICIOUS_TAG, original.getTag().getString(SuspiciousUtil.SUSPICIOUS_TAG));
+                    }
 
-                this.items.set(i, item);
-                setChanged();
-                flag = true;
+                    this.items.set(i, item);
+                    setChanged();
+                    flag = true;
 
+                }
             }
         }
         return flag;
@@ -171,6 +195,16 @@ public class PlateBlockEntity extends BlockEntity implements HeatableBlockEntity
                             p_155307_.sendBlockUpdated(p_155308_, p_155309_, p_155309_, 3);
                             p_155307_.gameEvent(GameEvent.BLOCK_CHANGE, p_155308_, GameEvent.Context.of(p_155309_));
                             p_155310_.cookingProgress = 0;
+                        } else if (itemstack.is(vectorwing.farmersdelight.common.registry.ModItems.RAW_PASTA.get())) {
+                            ItemStack finshedStack = new ItemStack(ModItems.YAKISOBA_RAW.get());
+                            if (itemstack.getTag() != null && itemstack.getTag().contains(SuspiciousUtil.SUSPICIOUS_TAG)) {
+                                finshedStack.getOrCreateTag().putString(SuspiciousUtil.SUSPICIOUS_TAG, itemstack.getTag().getString(SuspiciousUtil.SUSPICIOUS_TAG));
+                            }
+                            p_155310_.items.set(0, finshedStack);
+                            p_155307_.sendBlockUpdated(p_155308_, p_155309_, p_155309_, 3);
+                            p_155307_.gameEvent(GameEvent.BLOCK_CHANGE, p_155308_, GameEvent.Context.of(p_155309_));
+                            p_155310_.cookingProgress = 0;
+
                         }
                     }
                 }

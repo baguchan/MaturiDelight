@@ -90,12 +90,37 @@ public class PlateBlock extends BaseEntityBlock
                 }
                 return InteractionResult.CONSUME;
 
+            } else if (heldStack.is(vectorwing.farmersdelight.common.registry.ModItems.RAW_PASTA.get())) {
+
+                if (blockentity.addRaw(heldStack)) {
+                    if (player instanceof ServerPlayer serverPlayer) {
+                        ModAdvancements.MAKING_FOOD.trigger(serverPlayer);
+                    }
+                    player.playSound(SoundEvents.ITEM_PICKUP);
+                    return InteractionResult.SUCCESS;
+                }
+                return InteractionResult.CONSUME;
+
             }else {
                 if (heldStack.isEmpty()) {
                     player.playSound(SoundEvents.ITEM_PICKUP);
-                    ItemStack stack = blockentity.removeItem();
-                    if (!player.addItem(stack)) {
-                        player.drop(stack, false);
+                    if (!blockentity.getItems().get(0).is(ModItems.YAKISOBA_RAW.get()) || !blockentity.getItems().get(0).is(ModItems.YAKISOBA_SOYSAUCE_RAW.get())) {
+                        ItemStack stack = blockentity.removeItem();
+                        if (!player.addItem(stack)) {
+                            player.drop(stack, false);
+                        }
+                    } else if (heldStack.is(Items.BOWL)) {
+                        ItemStack original = new ItemStack(ModItems.YAKISOBA.get());
+                        if (blockentity.getItems().get(0).is(ModItems.YAKISOBA_SOYSAUCE_RAW.get())) {
+                            original = new ItemStack(ModItems.YAKISOBA_SOYSAUCE.get());
+                        }
+
+                        ItemStack stack = blockentity.removeItem();
+
+                        original.setTag(stack.getTag());
+                        if (!player.addItem(original)) {
+                            player.drop(original, false);
+                        }
                     }
                     return InteractionResult.SUCCESS;
                 } else if ((heldStack.isEdible() || heldStack.getItem() instanceof BlockItem blockItem && blockItem.getBlock() instanceof FlowerBlock) && blockentity.putSuspiciousItem(heldStack)) {

@@ -26,7 +26,9 @@ public class ModCreativeTabs {
                         ModItems.TAKOYAKI_SOYSAUCE,
                         ModItems.OKONOMIYAKI_RAW,
                         ModItems.OKONOMIYAKI,
-                        ModItems.OKONOMIYAKI_SOYSAUCE
+                        ModItems.OKONOMIYAKI_SOYSAUCE,
+                        ModItems.YAKISOBA,
+                        ModItems.YAKISOBA_SOYSAUCE
                 ).map(sup -> {
                     return sup.get().getDefaultInstance();
                 }).toList());

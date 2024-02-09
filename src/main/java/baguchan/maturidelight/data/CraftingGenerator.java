@@ -2,11 +2,11 @@ package baguchan.maturidelight.data;
 
 import baguchan.maturidelight.register.ModBlocks;
 import baguchan.maturidelight.register.ModItems;
-import baguchan.tofucraft.registry.TofuItems;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Blocks;
+import vectorwing.farmersdelight.common.tag.ForgeTags;
 
 import java.util.function.Consumer;
 
@@ -20,9 +20,9 @@ public class CraftingGenerator  extends RecipeProvider {
         ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.DOUGH_RAW.get(), 1)
                 .requires(Items.EGG)
                 .requires(Items.EGG)
-                .requires(TofuItems.BOTTLE_DASHI.get())
+                .requires(ForgeTags.MILK)
                 .requires(Items.WHEAT)
-                .unlockedBy("has_item", has(TofuItems.BOTTLE_DASHI.get()))
+                .unlockedBy("has_item", has(Items.EGG))
                 .save(consumer);
 
         ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, ModBlocks.TAKOYAKI_MAKER.get())
